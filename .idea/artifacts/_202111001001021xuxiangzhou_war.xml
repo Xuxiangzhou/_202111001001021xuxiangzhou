@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="_202111001001021xuxiangzhou:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>_202111001001021xuxiangzhou</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="_202111001001021xuxiangzhou-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="_202111001001021xuxiangzhou:war exploded" />
+    </root>
+  </artifact>
+</component>
