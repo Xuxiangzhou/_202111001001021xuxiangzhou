@@ -10,12 +10,12 @@ public class JDBC_Contection {
 //        1.注册驱动
         Class.forName("com.mysql.cj.jdbc.Driver");
 //        2.获取链接
-        String url="jdbc:mysql://127.0.0.1:3306/test";
+        String url="jdbc:mysql://127.0.0.1:3306/stu";//可简化书写“jdbc:mysql:///test”
         String username="root";
         String password="1234";
         Connection conn = DriverManager.getConnection(url, username, password);
 //        3.定义SQL语句
-        String sql="update user  set username='zhangsan' where id=1;";
+        String sql="update stu  set NAME='马冬梅' where id=1;";
 //        4.获取执行SQL对象statement
         Statement statement = conn.createStatement();
 //        5.执行SQL
