@@ -1,21 +1,20 @@
 package com.xuxiangzhou.week4;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class JDBCDemoServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//  connection in doGet();
+    public void init() throws ServletException {
         String driver="com.mysql.cj.jdbc.Driver";
         String url="jdbc:mysql://127.0.0.1:3306/stu";
         String username="root";
         String password="1234";
-
 
         try {
             Class.forName(driver);
@@ -24,12 +23,18 @@ public class JDBCDemoServlet extends HttpServlet {
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+//  connection in doGet();
+        System.out.println("I am in doget.");
 
 
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 
     }
 }

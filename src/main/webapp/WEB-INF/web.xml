@@ -7,4 +7,18 @@
         <servlet-name>JDBCDemoServlet</servlet-name>
         <servlet-class>com.xuxiangzhou.week4.JDBCDemoServlet</servlet-class>
     </servlet>
+    <servlet-mapping>
+    <servlet-name>JDBCDemoServlet</servlet-name>
+    <url-pattern>/jdbc</url-pattern>
+    </servlet-mapping>
+
+    <context-param>
+        <param-name>name</param-name>
+        <param-value>xuxiangzhou</param-value>
+    </context-param><context-param>
+    <param-name>StudentId</param-name>
+    <param-value>2021211001001021</param-value>
+</context-param>
+
+
 </web-app>

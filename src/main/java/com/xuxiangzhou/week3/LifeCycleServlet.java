@@ -17,6 +17,7 @@ public class LifeCycleServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
+//        只调用一次，servlet第一次被访问时调用
         System.out.println("I am in init()");
     }
     //  5.tomcat call service()-->doGet or doPost
@@ -32,6 +33,7 @@ public class LifeCycleServlet extends HttpServlet {
 
     @Override
     public void destroy() {
+//        释放资源，关闭服务器，在servlet销毁时调用（服务器关闭或内存释放）
         System.out.println("I am in destroy() ");
         super.destroy();
     }
