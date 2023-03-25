@@ -15,10 +15,33 @@
     <context-param>
         <param-name>name</param-name>
         <param-value>xuxiangzhou</param-value>
-    </context-param><context-param>
+    </context-param>
+    <context-param>
     <param-name>StudentId</param-name>
     <param-value>2021211001001021</param-value>
-</context-param>
+    </context-param>
+<!--    using SQL servlet database-->
+<!--    String driver="com.mysql.cj.jdbc.Driver";
+        String url="jdbc:mysql://127.0.0.1:3306/stu";
+        String username="root";
+        String password="1234";
+-->
+    <context-param>
+        <param-name>driver</param-name>
+        <param-value>com.mysql.cj.jdbc.Driver</param-value>
+    </context-param>
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>jdbc:mysql://127.0.0.1:3306/user_db</param-value>
+    </context-param>
+    <context-param>
+        <param-name>username</param-name>
+        <param-value>root</param-value>
+    </context-param>
+    <context-param>
+        <param-name>password</param-name>
+        <param-value>1234</param-value>
+    </context-param>
 
 
 </web-app>
