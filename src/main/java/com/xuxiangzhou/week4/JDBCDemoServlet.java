@@ -45,9 +45,9 @@ public class JDBCDemoServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        //获取post请求体
-        BufferedReader reader = request.getReader();
-        String line = reader.readLine();
-        System.out.println(line);
+//        //获取post请求体
+//        BufferedReader reader = request.getReader();
+//        String line = reader.readLine();
+//        System.out.println(line);
     }
 }

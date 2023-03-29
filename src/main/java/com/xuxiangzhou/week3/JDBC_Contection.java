@@ -15,7 +15,7 @@ public class JDBC_Contection {
         String password="1234";
         Connection conn = DriverManager.getConnection(url, username, password);
 //        3.定义SQL语句
-        String sql="update stu  set NAME='马冬梅' where id=1;";
+        String sql="update stu  set Class=2 where id=1;";
 //        4.获取执行SQL对象statement
         Statement statement = conn.createStatement();
 //        5.执行SQL

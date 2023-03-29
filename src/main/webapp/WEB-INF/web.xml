@@ -3,6 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
     <servlet>
         <servlet-name>JDBCDemoServlet</servlet-name>
         <servlet-class>com.xuxiangzhou.week4.JDBCDemoServlet</servlet-class>
@@ -12,14 +13,8 @@
     <url-pattern>/jdbc</url-pattern>
     </servlet-mapping>
 
-    <context-param>
-        <param-name>name</param-name>
-        <param-value>xuxiangzhou</param-value>
-    </context-param>
-    <context-param>
-    <param-name>StudentId</param-name>
-    <param-value>2021211001001021</param-value>
-    </context-param>
+
+
 <!--    using SQL servlet database-->
 <!--    String driver="com.mysql.cj.jdbc.Driver";
         String url="jdbc:mysql://127.0.0.1:3306/stu";
@@ -41,6 +36,14 @@
     <context-param>
         <param-name>password</param-name>
         <param-value>1234</param-value>
+    </context-param>
+    <context-param>
+        <param-name>name</param-name>
+        <param-value>xuxiangzhou</param-value>
+    </context-param>
+    <context-param>
+        <param-name>StudentId</param-name>
+        <param-value>2021211001001021</param-value>
     </context-param>
 
 

@@ -2,11 +2,13 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$" />
+    <file type="web" url="file://E:/BaiduNetdiskDownload/day04-Maven&amp;MyBatis/day04-Maven&amp;MyBatis/day04-1-Maven/资料/3. 测试web项目/web-demo" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="E:/BaiduNetdiskDownload/day04-Maven&amp;MyBatis/day04-Maven&amp;MyBatis/day04-1-Maven/资料/3. 测试web项目/web-demo/pom.xml" />
       </list>
     </option>
   </component>
