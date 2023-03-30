@@ -46,11 +46,5 @@
         <param-value>2021211001001021</param-value>
     </context-param>
 
-    
-<!--    JSP导入-->
-<servlet>
-    <servlet-name>MyJsp</servlet-name>
-    <jsp-file>/WEB-INF/MyJsp.jsp</jsp-file>
-</servlet>
 
 </web-app>
