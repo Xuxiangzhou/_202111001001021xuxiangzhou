@@ -5,10 +5,12 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
+<%@include file="header.jsp"%>
 <h1><%= "Hello World!!" %>
 
 </h1>
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
 </body>
+<%@include file="footer.jsp"%>
 </html>
