@@ -14,8 +14,6 @@ public class RedirectServlet extends HttpServlet {
 
 
 
-//		response.sendRedirect("index.jsp");
-//		response.sendRedirect("/2019211001001201JieMengyao_war_exploded/index.jsp");
         response.sendRedirect("http://www.baidu.com");
 
     }

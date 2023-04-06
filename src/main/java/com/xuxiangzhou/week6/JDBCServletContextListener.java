@@ -7,9 +7,9 @@ import javax.servlet.annotation.WebListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 @WebListener
-public class JdbcServletContextListener implements ServletContextListener {
+public class JDBCServletContextListener implements ServletContextListener {
 
-    public JdbcServletContextListener() {
+    public JDBCServletContextListener() {
         System.out.println("-----");
     }
     @Override

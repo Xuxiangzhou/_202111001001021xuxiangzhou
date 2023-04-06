@@ -11,9 +11,9 @@ import java.net.URLEncoder;
 public class SearchServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html;charset=utf-8"); //同时设置服务端的编码格式和客户端的响应文件类型及响应编码格式
+        response.setContentType("text/html;charset=utf-8");
         String txt = URLEncoder.encode(request.getParameter("txt"),"utf-8");
-//        System.out.println(txt);
+
         String search = request.getParameter("search");
         System.out.println(search);
         if(txt.equals("") || txt == null){
