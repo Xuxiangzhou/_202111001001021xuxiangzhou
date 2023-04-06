@@ -11,6 +11,11 @@
         <option value="E:/BaiduNetdiskDownload/day04-Maven&amp;MyBatis/day04-Maven&amp;MyBatis/day04-1-Maven/资料/3. 测试web项目/web-demo/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/Mybatis-demo/pom.xml" />
+      </set>
+    </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8 (2)" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
