@@ -1,6 +1,6 @@
 package com.xuxiangzhou.model;
 
-public class user {
+public class User {
     private String id;
     private String UserName;
     private String password;
@@ -8,7 +8,7 @@ public class user {
     private String Gender;
     private String Birthdate;
 
-    public user(String id, String userName, String password, String email, String gender, String birthdate) {
+    public User(String id, String userName, String password, String email, String gender, String birthdate) {
         this.id = id;
         UserName = userName;
         this.password = password;
@@ -67,7 +67,7 @@ public class user {
 
     @Override
     public String toString() {
-        return "user{" +
+        return "User{" +
                 "id=" + id +
                 ", UserName=" + UserName +
                 ", password=" + password +

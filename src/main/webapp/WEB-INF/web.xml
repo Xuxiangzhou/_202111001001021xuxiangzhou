@@ -45,6 +45,10 @@
         <param-name>StudentId</param-name>
         <param-value>2021211001001021</param-value>
     </context-param>
+    <welcome-file-list>
+        <welcome-file>home</welcome-file>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
 
 
 </web-app>

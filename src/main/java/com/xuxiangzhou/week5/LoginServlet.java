@@ -1,63 +1,47 @@
 package com.xuxiangzhou.week5;
+import com.xuxiangzhou.dao.UserDao;
+import com.xuxiangzhou.model.User;
 
-import com.xuxiangzhou.week4.pojo.user;
-
+import java.sql.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.sql.*;
-
+import java.io.PrintWriter;
 @WebServlet(name = "LoginServlet", value = "/login")
 public class LoginServlet extends HttpServlet {
-    user User=new user();
+    Connection con = null;
+    @Override
+    public void init() throws ServletException {
+        con =(Connection)getServletContext().getAttribute("sql");
+
+    }
+
 
     @Override
-    public void init(ServletConfig config) throws ServletException {
-        String driver = config.getServletContext().getInitParameter("driver");
-        String url = config.getServletContext().getInitParameter("url");
-        String username = config.getServletContext().getInitParameter("username");
-        String password = config.getServletContext().getInitParameter("password");
-//        System.out.println(driver+"\n"+url);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        doPost(request, response);
+        request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
+    }
+    @Override
 
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        PrintWriter out=response.getWriter();
+        String username=request.getParameter("username");
+        String password=request.getParameter("password");
+        UserDao userDao=new UserDao();
         try {
-            Class.forName(driver);
-            Connection conn = DriverManager.getConnection(url, username, password);
-//            String sql1="INSERT INTO `user` VALUES("2021211001001021","xuxiangzhou","1234","17251692892qq.com","男","2023-3-25")";
-            Statement stmt = conn.createStatement();
-//            stmt.executeUpdate(sql1);
-            ResultSet rs = stmt.executeQuery("select * from user");
-            while (rs.next()) {
-
-                User.setId(rs.getString("Id"));
-                User.setUserName(rs.getString("UserName"));
-                User.setPassword(rs.getString("password"));
-                User.setEmail(rs.getString("Email"));
-                User.setGender(rs.getString("Gender"));
-                User.setBirthdate(rs.getString("Birthdate"));
-                System.out.println(User.toString());
+            User user = userDao.findByUsernamePassword(con, username, password);
+            if (user!=null){
+                request.getRequestDispatcher("WEB-INF/Views").forward(request,response);
 
             }
-            rs.close();
-            stmt.close();
-            conn.close();
-
-
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
     }
 
-        @Override
-        protected void doGet (HttpServletRequest request, HttpServletResponse response) throws
-        ServletException, IOException {
 
-        }
-
-        @Override
-        protected void doPost (HttpServletRequest request, HttpServletResponse response) throws
-        ServletException, IOException {
-
-        }
-    }
-
+}

@@ -27,7 +27,7 @@ public class RegisterServlet extends HttpServlet {
         try {
             Class.forName(driver);
             Connection conn = DriverManager.getConnection(url, username, password);
-//            String sql1="INSERT INTO `user` VALUES("2021211001001021","xuxiangzhou","1234","17251692892qq.com","男","2023-3-25")";
+//            String sql1="INSERT INTO `User` VALUES("2021211001001021","xuxiangzhou","1234","17251692892qq.com","男","2023-3-25")";
             Statement stmt = conn.createStatement();
 //            stmt.executeUpdate(sql1);
             ResultSet rs = stmt.executeQuery("select * from user");
