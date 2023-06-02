@@ -1,21 +1,14 @@
 package com.xuxiangzhou.model;
 
+import java.util.Date;
+
 public class User {
     private String id;
     private String UserName;
     private String password;
     private String Email;
     private String Gender;
-    private String Birthdate;
-
-    public User(String id, String userName, String password, String email, String gender, String birthdate) {
-        this.id = id;
-        UserName = userName;
-        this.password = password;
-        Email = email;
-        Gender = gender;
-        Birthdate = birthdate;
-    }
+    private Date Birthdate;
 
     public String getId() {
         return id;
@@ -57,25 +50,32 @@ public class User {
         Gender = gender;
     }
 
-    public String getBirthdate() {
+    public Date getBirthdate() {
         return Birthdate;
     }
 
-    public void setBirthdate(String birthdate) {
+    public void setBirthdate(Date birthdate) {
+        Birthdate = birthdate;
+    }
+
+    public User(String id, String userName, String password, String email, String gender, Date birthdate) {
+        this.id = id;
+        UserName = userName;
+        this.password = password;
+        Email = email;
+        Gender = gender;
         Birthdate = birthdate;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
-                ", UserName=" + UserName +
-                ", password=" + password +
-                ", Email=" + Email +
-                ", Gender=" + Gender +
-                ", Birthdate=" + Birthdate +
+                "id='" + id + '\'' +
+                ", UserName='" + UserName + '\'' +
+                ", password='" + password + '\'' +
+                ", Email='" + Email + '\'' +
+                ", Gender='" + Gender + '\'' +
+                ", Birthdate='" + Birthdate + '\'' +
                 '}';
     }
-
-
 }

@@ -3,24 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-
-    <servlet>
-        <servlet-name>JDBCDemoServlet</servlet-name>
-        <servlet-class>com.xuxiangzhou.week4.JDBCDemoServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-    <servlet-name>JDBCDemoServlet</servlet-name>
-    <url-pattern>/jdbc</url-pattern>
-    </servlet-mapping>
-
-
-
-<!--    using SQL servlet database-->
-<!--    String driver="com.mysql.cj.jdbc.Driver";
-        String url="jdbc:mysql://127.0.0.1:3306/stu";
-        String username="root";
-        String password="1234";
--->
+    <!-- tomcat read this file to run servlet -->
+    <!-- you need to tell tomcat we have created a new servlet -->
+    <session-config>
+        <session-timeout>15</session-timeout>
+    </session-config>
     <context-param>
         <param-name>driver</param-name>
         <param-value>com.mysql.cj.jdbc.Driver</param-value>
@@ -37,18 +24,61 @@
         <param-name>password</param-name>
         <param-value>1234</param-value>
     </context-param>
-    <context-param>
-        <param-name>name</param-name>
-        <param-value>xuxiangzhou</param-value>
-    </context-param>
-    <context-param>
-        <param-name>StudentId</param-name>
-        <param-value>2021211001001021</param-value>
-    </context-param>
+    <servlet>
+        <servlet-name>giveanyname</servlet-name>
+        <servlet-class>com.xuxiangzhou.week2.HelloWorldServlet</servlet-class><!-- u need to add package also-->
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>giveanyname</servlet-name>
+        <url-pattern>/hello</url-pattern><!--must start with /-->
+    </servlet-mapping>
+    <!-- we need to tell tomcat we have created a new servlet-->
+    <servlet>
+        <servlet-name>LifeCycleServlet</servlet-name>
+        <servlet-class>com.xuxiangzhou.week3.LifeCycleServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LifeCycleServlet</servlet-name>
+        <url-pattern>/life</url-pattern>
+    </servlet-mapping>
+    <!-- we need to tell tomcat -->
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.xuxiangzhou.week3.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>JDBCDemoServlet</servlet-name>
+        <servlet-class>com.xuxiangzhou.week4.JDBCDemoServlet</servlet-class>
+        <init-param>
+            <param-name>driver</param-name>
+            <param-value>com.mysql.cj.jdbc.Driver</param-value>
+        </init-param>
+        <init-param>
+            <param-name>url</param-name>
+            <param-value>jdbc:mysql://127.0.0.1:3306/user_db</param-value>
+        </init-param>
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>1234</param-value>
+        </init-param>
+
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <!-- <servlet-mapping>
+         <servlet-name>JDBCDemoServlet</servlet-name>
+         <url-pattern>/jdbc</url-pattern>
+     </servlet-mapping>-->
     <welcome-file-list>
         <welcome-file>home</welcome-file>
-        <welcome-file>index.html</welcome-file>
     </welcome-file-list>
-
-
 </web-app>

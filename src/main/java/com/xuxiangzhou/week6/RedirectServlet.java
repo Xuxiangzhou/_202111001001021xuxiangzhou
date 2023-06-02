@@ -1,21 +1,19 @@
 package com.xuxiangzhou.week6;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.annotation.*;
 import java.io.IOException;
-@WebServlet("/redirect")
+
+@WebServlet(name = "RedirectServlet", value = "/RedirectServlet")
 public class RedirectServlet extends HttpServlet {
-
-
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-
-        response.sendRedirect("http://www.baidu.com");
-
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.sendRedirect("https://github.com/");
     }
 
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
 }
